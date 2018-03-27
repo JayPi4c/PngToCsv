@@ -21,7 +21,6 @@ public class Main {
 			System.out.println("Bitte den Ausführungsordner überprüfen!");
 			System.out.println("Es scheint, als sei das Programm in einem falschen Ordner gestartet worden!");
 			System.out.println("Exiting...");
-			System.out.println("One more Message!");
 			System.exit(0);
 		}
 
