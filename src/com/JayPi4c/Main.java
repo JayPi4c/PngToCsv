@@ -16,13 +16,12 @@ public class Main {
 	public static final String lineSeparator = System.getProperty("line.separator");
 
 	public static void main(String args[]) throws IOException {
-		File checking = new File(getExecutionPath() + "/0");
-		if (!checking.exists()) {
-			System.out.println("Bitte den Ausführungsordner überprüfen!");
-			System.out.println("Es scheint, als sei das Programm in einem falschen Ordner gestartet worden!");
-			System.out.println("Exiting...");
-			System.exit(0);
-		}
+		/*
+		 * File checking = new File(getExecutionPath() + "/0"); if (!checking.exists())
+		 * { System.out.println("Bitte den Ausführungsordner überprüfen!"); System.out.
+		 * println("Es scheint, als sei das Programm in einem falschen Ordner gestartet worden!"
+		 * ); System.out.println("Exiting..."); System.exit(0); }
+		 */
 
 		File finalFile = new File("location");
 
@@ -34,6 +33,10 @@ public class Main {
 
 		for (int i = 0; i <= 7; i++) {
 			File directory = new File(getExecutionPath() + "/" + i);
+			if (!directory.exists()) {
+				System.out.println("Der Ordner '" + directory.getAbsolutePath() + "' existiert nicht!");
+				continue;
+			}
 			System.out.println("Directory " + directory.getAbsolutePath() + "; number of files inside: "
 					+ directory.list().length);
 			System.out.println();
@@ -74,8 +77,10 @@ public class Main {
 			BW.close();
 		}
 		allWriter.close();
-
-		shuffle(allInOneFile);
+		if (allInOneFile.length() > 0)
+			shuffle(allInOneFile);
+		else
+			System.out.println("'allData.csv' is Empty");
 
 	}
 
