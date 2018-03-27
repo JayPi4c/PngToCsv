@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 public class Main {
-
+	// Das ist ein Kommentar!
 	public static final String lineSeparator = System.getProperty("line.separator");
 
 	public static void main(String args[]) throws IOException {
