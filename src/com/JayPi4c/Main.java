@@ -48,7 +48,7 @@ public class Main {
 
 			BufferedWriter BW = new BufferedWriter(new FileWriter(finalFile));
 			for (int j = 1; j <= directory.list().length; j++) {
-				String path = directory.getPath() + "/" + i + "IMG" + j + ".JPG";
+				String path = directory.getPath() + "/" + i + "IMG" + j + ".PNG";
 				System.out.println("expected Path: " + path);
 				File f = new File(path);
 
@@ -81,6 +81,7 @@ public class Main {
 			shuffle(allInOneFile);
 		else
 			System.out.println("'allData.csv' is Empty");
+		System.out.println("DONE!");
 
 	}
 
